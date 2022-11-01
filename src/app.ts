@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import express from "express";
 import cors from "cors";
-import router from "./routes/todo";
+import router from "./routes";
 import config from "./config";
 import db from "./config/db";
 

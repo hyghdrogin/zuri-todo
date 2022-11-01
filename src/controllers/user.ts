@@ -82,9 +82,11 @@ export default class UserController {
       }
       const { _id, email } = user;
       const token = await generateToken({ _id, email });
+      const todos = await models.Todo.find({ user_id: _id }).countDocuments();
       const userDetails = {
         _id,
-        username
+        username,
+        todos
       };
       return successResponse(res, 200, "User Logged in Successfully.", {
         token,
@@ -139,7 +141,7 @@ export default class UserController {
       return successResponse(
         res,
         200,
-        "Account deleted successfully, Kindly login."
+        "Account deleted successfully."
       );
     } catch (error) {
       handleError(error, req);
