@@ -15,6 +15,7 @@ const {
 
 router.post("/register", validator(validateSignup), createUser);
 router.post("/login", validator(validateLogin), loginUser);
+
 router.patch("/reset-password", verifyToken, loginPasswordReset);
 
 router.delete("/", verifyToken, deleteAccount);
