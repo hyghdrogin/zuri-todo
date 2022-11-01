@@ -6,16 +6,26 @@ import router from "./routes/todo";
 import config from "./config";
 import db from "./config/db";
 
+import reqLogger from "./utils/reqlogger";
+import { CustomRequest } from "./utils/interface";
+
 const app = express();
 const port = config.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
 
+declare global {
+  namespace Express {
+    interface Request extends CustomRequest { }
+  }
+}
+
+app.use(reqLogger);
 app.use("/api", router);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to myTodo app");
+  res.send(`Welcome to ${config.APP_NAME} app`);
 });
 
 // Global 404 error handler
@@ -37,7 +47,6 @@ app.use((req, res) => res.status(404).send({
 process.on("unhandledRejection", (error: any) => {
   console.log("FATAL UNEXPECTED UNHANDLED REJECTION!", error.message);
   console.error("\n\n", error, "\n\n");
-  //  throw error;
 });
 
 export default app;

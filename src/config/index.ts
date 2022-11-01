@@ -9,6 +9,7 @@ const config = {
   PORT: process.env.PORT,
   MONGO_URL: process.env.MONGO_URL as string,
   APP_NAME: process.env.APP_NAME,
+  JWT_KEY: process.env.JWT_KEY as string,
 };
 
 const absentConfig = Object.entries(config)

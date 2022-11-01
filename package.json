@@ -19,18 +19,22 @@
   },
   "homepage": "https://github.com/hyghdrogin/zuri-todo#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "joi": "^17.6.2",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "luxon": "^3.0.4",
-    "mongoose": "^6.6.5",
+    "mongoose": "^6.7.0",
     "pino": "^8.6.1"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.14",
+    "@types/jsonwebtoken": "^8.5.9",
     "@types/lodash": "^4.14.186",
     "@types/luxon": "^3.0.1",
     "@types/node": "^18.8.2",
