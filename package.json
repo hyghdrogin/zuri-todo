@@ -2,10 +2,14 @@
   "name": "zuri-todo",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
+  "main": "app.js",
   "scripts": {
     "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts"
+    "dev": "nodemon src/app.ts",
+    "postinstall": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint --fix src/**/*.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
